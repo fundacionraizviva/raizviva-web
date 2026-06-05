@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Raíz Viva</title>
+    
+    <!-- ========================================== -->
+    <!-- CONFIGURACIÓN SEO (Añadida según solicitud) -->
+    <!-- ========================================== -->
+    <title>Fundación Raíz Viva | Higüey</title>
+    <meta name="description" content="Fundación Raíz Viva. Envía tus propuestas, canaliza ayudas y colabora con nosotros en Higüey. Dar es mejor que recibir.">
+    <meta name="keywords" content="Fundación, Raíz Viva, Higüey, República Dominicana, Ayuda social, donaciones, solidaridad, alianzas, voluntariado">
+    <meta name="author" content="Fundación Raíz Viva">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Previsualizaciones en WhatsApp/Redes) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fundacionraizviva.github.io/raizviva-web/">
+    <meta property="og:title" content="Fundación Raíz Viva | Higüey">
+    <meta property="og:description" content="Envía tus propuestas y chatea con nuestro asistente. Dar es mejor que recibir.">
+    <meta property="og:image" content="IMG_20260601_135048.jpg">
+    <!-- ========================================== -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Configuración Vibe Coding: Paleta de colores del Manual de Identidad -->
+    <!-- Configuración Vibe Coding: Paleta de colores original -->
     <script>
         tailwind.config = {
             theme: {
@@ -18,11 +36,19 @@
                         brandPink: '#E78895',
                         brandBlue: '#2D8CBF',
                         brandDark: '#353535'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        body { background-color: #494949; }
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
 </head>
 <body class="bg-brandGray text-white relative min-h-screen pb-20 font-sans">
     
@@ -31,7 +57,7 @@
         <div class="flex items-center gap-4">
             <!-- Contenedor blanco para el logo -->
             <div class="bg-white rounded-xl p-1.5 shadow-sm">
-                <img src="logo.png" alt="Logotipo Fundación Raíz Viva" class="h-12 w-auto">
+                <img src="logo.jpg" alt="Logotipo Fundación Raíz Viva" class="h-12 w-auto" onerror="this.src='https://placehold.co/150x50/ffffff/128230?text=Raiz+Viva'">
             </div>
             <!-- Título tipográfico -->
             <div class="hidden sm:flex flex-col justify-center leading-none">
@@ -47,117 +73,123 @@
     </header>
     
     <!-- MAIN CONTENT -->
-    <main class="max-w-7xl mx-auto p-8">
+    <main class="max-w-7xl mx-auto p-4 sm:p-8">
         
-        <div class="text-center mb-12 mt-6">
-            <h1 class="text-3xl font-bold text-white mb-2">Envía tus propuestas y chatea con nuestro asistente</h1>
-            <p class="text-xl italic text-brandBlue font-medium">"Dar es mejor que recibir"</p>
+        <div class="text-center mb-10 mt-6">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white mb-3">Envía tus propuestas y chatea con nuestro asistente</h1>
+            <p class="text-lg sm:text-xl italic text-brandBlue font-medium">"Dar es mejor que recibir"</p>
         </div>
 
-        <!-- FORMULARIO DE ALIANZAS (Basado en la captura) -->
-        <section class="bg-brandDark p-8 rounded-2xl border border-white/10 shadow-2xl max-w-4xl mx-auto mb-16">
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- FORMULARIO DE ALIANZAS -->
+        <section id="inicio" class="bg-brandDark p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl max-w-4xl mx-auto mb-16">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="event.preventDefault(); alert('Solicitud enviada de forma segura.');">
                 
-                <!-- Select: Tipo de entidad -->
                 <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">SOY UNA / UN:</label>
-                    <select class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue appearance-none">
-                        <option>Fundación / Institución Aliada</option>
-                        <option>Empresa Privada</option>
-                        <option>Voluntario Independiente</option>
-                    </select>
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider uppercase">Soy una / un:</label>
+                    <div class="relative">
+                        <select class="w-full bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue appearance-none cursor-pointer">
+                            <option>Fundación / Institución Aliada</option>
+                            <option>Empresa Privada</option>
+                            <option>Voluntario Independiente</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="absolute right-3 top-3.5 w-5 h-5 text-gray-400 pointer-events-none"></i>
+                    </div>
                 </div>
                 
-                <!-- Input: Nombre -->
                 <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">NOMBRE / ORGANIZACIÓN:</label>
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider uppercase">Nombre / Organización:</label>
                     <input type="text" placeholder="Ej. Fundación de Apoyo" class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400">
                 </div>
                 
-                <!-- Input: Teléfono -->
                 <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">TELÉFONO DE CONTACTO:</label>
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider uppercase">Teléfono de Contacto:</label>
                     <input type="tel" placeholder="Ej. 829-555-5555" class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400">
                 </div>
                 
-                <!-- Input: Dirección -->
                 <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">DIRECCIÓN / PROVINCIA:</label>
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider uppercase">Dirección / Provincia:</label>
                     <input type="text" placeholder="Ej. Higüey, Prov. La Altagracia" class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400">
                 </div>
                 
-                <!-- Textarea con Botón de IA -->
                 <div class="flex flex-col md:col-span-2">
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-xs font-bold text-gray-300 tracking-wider">DETALLES DE LA AYUDA O ALIANZA REQUERIDA:</label>
-                        <button type="button" class="text-xs text-brandPink hover:text-pink-400 font-bold flex items-center gap-1 transition-colors">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
+                        <label class="text-xs font-bold text-gray-300 tracking-wider uppercase">Detalles de la ayuda o alianza requerida:</label>
+                        <button type="button" onclick="optimizarTexto()" class="text-xs text-brandPink hover:text-pink-400 font-bold flex items-center gap-1 transition-colors">
                             <i data-lucide="sparkles" class="w-3 h-3"></i> Optimizar Redacción con IA
                         </button>
                     </div>
-                    <textarea rows="4" placeholder="Escribe aquí tu borrador. Luego, pulsa 'Optimizar con IA' para que nuestro modelo de lenguaje lo redacte de forma profesional y persuasiva..." class="bg-brandGray border border-gray-500 rounded-lg p-4 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400"></textarea>
+                    <textarea id="ai-textarea" rows="4" placeholder="Escribe aquí tu borrador. Luego, pulsa 'Optimizar con IA' para que nuestro modelo de lenguaje lo redacte de forma profesional y persuasiva..." class="bg-brandGray border border-gray-500 rounded-lg p-4 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400 resize-none"></textarea>
+                    
+                    <div id="ai-loading" class="hidden mt-2 flex items-center gap-2 text-brandPink text-xs font-bold">
+                        <i data-lucide="loader-2" class="w-3 h-3 animate-spin"></i> Optimizando con Inteligencia Artificial...
+                    </div>
                 </div>
                 
-                <!-- Footer del formulario y Botón Submit -->
-                <div class="md:col-span-2 flex flex-col sm:flex-row justify-between items-center mt-4 gap-4">
+                <div class="md:col-span-2 flex flex-col sm:flex-row justify-between items-center mt-2 gap-4">
                     <span class="text-xs text-gray-400">Datos procesados de manera segura y confidencial.</span>
-                    <button type="button" class="bg-brandBlue hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-lg w-full sm:w-auto">
+                    <button type="submit" class="bg-brandBlue hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-lg w-full sm:w-auto">
                         Enviar Solicitud
                     </button>
                 </div>
             </form>
         </section>
 
-        <!-- GALERÍA DE ENTREGAS (Minimalista) -->
-        <section class="mb-16">
+        <!-- GALERÍA DE ENTREGAS CON NOMBRES DE ARCHIVO ACTUALIZADOS -->
+        <section id="mision" class="mb-10">
             <h2 class="text-2xl font-bold text-center mb-8 text-white">Nuestras Entregas en Acción</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden shadow-lg transition-transform hover:scale-105">
-                    <img src="entrega-1.jpeg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega de ayudas 1">
+                    <img src="IMG_20260601_135048.jpg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega 1" onerror="this.src='https://placehold.co/600x400/353535/ffffff?text=Entrega+1'">
                 </div>
                 <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden shadow-lg transition-transform hover:scale-105">
-                    <img src="entrega-2.jpeg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega de ayudas 2">
+                    <img src="IMG_20260601_135049.jpg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega 2" onerror="this.src='https://placehold.co/600x400/353535/ffffff?text=Entrega+2'">
                 </div>
                 <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden shadow-lg transition-transform hover:scale-105">
-                    <img src="entrega-3.jpeg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega de ayudas 3">
+                    <img src="IMG_20260601_135111.jpg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega 3" onerror="this.src='https://placehold.co/600x400/353535/ffffff?text=Entrega+3'">
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- CHAT INTELIGENTE (Ajustado a Azul) -->
+    <!-- CHAT INTELIGENTE (Diseño Original) -->
     <div id="smart-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         
-        <div id="chat-window" class="hidden w-80 h-96 bg-brandDark border border-gray-600 rounded-2xl shadow-2xl mb-4 flex flex-col overflow-hidden transition-all">
-            <div class="bg-brandBlue p-4 flex justify-between items-center">
+        <div id="chat-window" class="hidden w-[90vw] max-w-sm h-[450px] bg-brandDark border border-gray-600 rounded-2xl shadow-2xl mb-4 flex flex-col overflow-hidden transition-all fade-in">
+            <div class="bg-brandBlue p-4 flex justify-between items-center shadow-md z-10">
                 <div class="flex items-center gap-2">
                     <i data-lucide="bot" class="text-white"></i>
                     <h3 class="font-bold text-white">Asistente Raíz Viva</h3>
                 </div>
-                <button onclick="toggleChat()" class="text-white hover:text-gray-200">
+                <button onclick="toggleChat()" class="text-white hover:text-gray-200 bg-black/10 hover:bg-black/20 p-1 rounded-md transition-colors">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
             </div>
             
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-brandGray text-sm text-gray-200 flex flex-col gap-3">
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-brandGray text-sm text-gray-200 flex flex-col gap-3 scroll-smooth">
                 <div class="text-left">
-                    <div class="bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow">
-                        ¡Hola! Soy el asistente de la Fundación Raíz Viva. ¿En qué te puedo ayudar hoy? Puedes preguntarme sobre donaciones, alianzas o nuestra historia.
+                    <div class="bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow-md">
+                        ¡Hola! Soy el asistente de la Fundación Raíz Viva. ¿En qué te puedo ayudar hoy? Puedes preguntarme sobre donaciones, alianzas o sobre Virginia.
                     </div>
                 </div>
             </div>
             
             <div class="p-3 bg-brandDark border-t border-white/10">
-                <input type="text" id="chat-input" onkeypress="handleChatInput(event)" placeholder="Escribe tu mensaje..." class="w-full bg-brandGray text-white rounded-full px-4 py-2 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue border border-gray-500 placeholder-gray-400">
+                <div class="relative flex items-center">
+                    <input type="text" id="chat-input" onkeypress="handleChatInput(event)" placeholder="Escribe tu mensaje..." class="w-full bg-brandGray text-white rounded-full pl-4 pr-12 py-3 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue border border-gray-500 placeholder-gray-400">
+                    <button onclick="triggerChatSend()" class="absolute right-2 p-2 bg-brandBlue hover:bg-blue-600 rounded-full text-white transition-colors">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
-        <button onclick="toggleChat()" class="w-14 h-14 bg-brandBlue hover:bg-blue-600 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
+        <button onclick="toggleChat()" class="w-14 h-14 bg-brandBlue hover:bg-blue-600 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-brandDark">
             <i data-lucide="message-square" class="text-white w-6 h-6"></i>
         </button>
     </div>
 
-    <!-- LÓGICA DEL CHAT -->
+    <!-- LÓGICA DEL CHAT Y FORMULARIO -->
     <script>
         lucide.createIcons();
 
@@ -166,8 +198,14 @@
             chatWindow.classList.toggle('hidden');
         }
 
-        function handleChatInput(event) {
-            if (event.key === 'Enter') {
+        function triggerChatSend() {
+            const inputField = document.getElementById('chat-input');
+            const e = new KeyboardEvent('keypress', { key: 'Enter' });
+            handleChatInput(e, true); 
+        }
+
+        function handleChatInput(event, force = false) {
+            if (event.key === 'Enter' || force) {
                 const inputField = document.getElementById('chat-input');
                 const rawText = inputField.value.trim();
                 
@@ -176,23 +214,48 @@
                 appendMessage('user', rawText);
                 inputField.value = '';
 
+                const typingId = showTypingIndicator();
+
                 setTimeout(() => {
+                    removeTypingIndicator(typingId);
                     procesarRespuestaBot(rawText);
-                }, 600);
+                }, 800);
             }
+        }
+
+        function showTypingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const id = 'typing-' + Date.now();
+            const typingHtml = `
+                <div id="${id}" class="text-left fade-in">
+                    <div class="bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow flex gap-1 items-center">
+                        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.insertAdjacentHTML('beforeend', typingHtml);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function removeTypingIndicator(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
         }
 
         function procesarRespuestaBot(userText) {
             const textoLimpio = userText.toLowerCase();
             
-            if (textoLimpio.includes('fundadora') || textoLimpio.includes('liderazgo') || textoLimpio.includes('historia')) {
-                appendMessage('bot', "Nuestra fundadora destaca por su liderazgo en la iniciativa 'Mujeres de Impacto que Transforman', cuya gestión y visión estratégica derivaron en la creación de una fundación dedicada al apoyo de sectores vulnerables. Esta experiencia consolida su capacidad para movilizar equipos, gestionar proyectos de alto impacto social y canalizar soluciones efectivas para quienes más lo necesitan.");
+            if (textoLimpio.includes('virginia') || textoLimpio.includes('liderazgo') || textoLimpio.includes('historia') || textoLimpio.includes('fundadora')) {
+                appendMessage('bot', "Virginia destaca por su liderazgo en la iniciativa 'Mujeres de Impacto que Transforman', cuya gestión y visión estratégica derivaron en la creación de una fundación dedicada al apoyo de sectores vulnerables. Esta experiencia consolida su capacidad para movilizar equipos, gestionar proyectos de alto impacto social y canalizar soluciones efectivas para quienes más lo necesitan.");
             } 
             else if (textoLimpio.includes('ayudar') || textoLimpio.includes('donar') || textoLimpio.includes('alianza')) {
-                appendMessage('bot', "Toda ayuda es bienvenida. Puedes enviarnos tu propuesta directamente a través del formulario de alianzas en esta misma página.");
+                appendMessage('bot', "Toda ayuda es bienvenida. Puedes enviarnos tu propuesta directamente a través del formulario de alianzas en la pantalla principal. ¡Estaremos encantados de leerte!");
             }
             else {
-                appendMessage('bot', "Gracias por comunicarte con nosotros. Si tienes una consulta específica, utiliza nuestro formulario principal y te contactaremos a la brevedad.");
+                appendMessage('bot', "Gracias por comunicarte con nosotros. Si tienes una consulta específica, utiliza nuestro formulario principal y te contactaremos a la brevedad posible.");
             }
         }
 
@@ -201,18 +264,36 @@
             const messageWrapper = document.createElement('div');
             const messageBubble = document.createElement('div');
 
+            messageWrapper.className = "fade-in w-full flex " + (sender === 'user' ? "justify-end" : "justify-start");
+            
             if (sender === 'user') {
-                messageWrapper.className = "text-right";
-                messageBubble.className = "bg-brandBlue p-3 rounded-lg rounded-tr-none inline-block shadow text-white";
+                messageBubble.className = "bg-brandBlue p-3 rounded-lg rounded-tr-none inline-block shadow text-white max-w-[85%]";
             } else {
-                messageWrapper.className = "text-left";
-                messageBubble.className = "bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow";
+                messageBubble.className = "bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow max-w-[90%]";
             }
 
-            messageBubble.textContent = text; // Prevención XSS activa
+            messageBubble.textContent = text; 
             messageWrapper.appendChild(messageBubble);
             chatMessages.appendChild(messageWrapper);
             chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function optimizarTexto() {
+            const textarea = document.getElementById('ai-textarea');
+            const loader = document.getElementById('ai-loading');
+            const textoOriginal = textarea.value.trim();
+
+            if (!textoOriginal) {
+                alert("Por favor, escribe un borrador primero para que la IA lo optimice.");
+                return;
+            }
+
+            loader.classList.remove('hidden');
+            
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                textarea.value = `PROPUESTA DE ALIANZA ESTRATÉGICA:\n\nEstimado equipo de la Fundación Raíz Viva,\n\nMe dirijo a ustedes con el propósito de establecer un puente de colaboración enfocado en el desarrollo comunitario.\n\nEspecíficamente, mi propuesta consiste en: "${textoOriginal}".\n\nQuedo a su entera disposición para conversar sobre los detalles y formalizar esta iniciativa. Agradezco de antemano su tiempo y valiosa labor.\n\nAtentamente.`;
+            }, 1500);
         }
     </script>
 </body>

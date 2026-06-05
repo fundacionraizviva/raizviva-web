@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Raíz Viva | Higüey</title>
+    
+    <!-- ========================================== -->
+    <!-- CONFIGURACIÓN SEO (Search Engine Optimization) -->
+    <!-- ========================================== -->
+    <title>Fundación Raíz Viva | Sembrando esperanza en Higüey</title>
+    <meta name="description" content="Fundación Raíz Viva trabaja incansablemente para llevar apoyo directo a nuestra comunidad en Higüey. Únete a nuestra causa y ayudemos a quienes más lo necesitan.">
+    <meta name="keywords" content="Fundación, Raíz Viva, Higüey, República Dominicana, Ayuda social, donaciones, solidaridad, comunidad, voluntariado">
+    <meta name="author" content="Fundación Raíz Viva">
+    <meta name="robots" content="index, follow"> <!-- Indica a Google que indexe la página -->
+
+    <!-- Open Graph (Para previsualizaciones en WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <!-- PLACEHOLDER: Reemplaza "tu-usuario" por el nombre de tu usuario real en GitHub -->
+    <meta property="og:url" content="https://tu-usuario.github.io/raizviva-web/">
+    <meta property="og:title" content="Fundación Raíz Viva | Sembrando esperanza en Higüey">
+    <meta property="og:description" content="Llevando apoyo directo a nuestra comunidad. Conoce nuestras entregas en acción y únete a la causa.">
+    <!-- Utilizamos la primera foto de entrega como imagen de portada para los enlaces -->
+    <meta property="og:image" content="entrega-1.jpeg">
+    <!-- ========================================== -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -50,19 +69,35 @@
             <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Trabajamos incansablemente para llevar apoyo directo a nuestra comunidad, fortaleciendo nuestras raíces sociales.</p>
         </section>
 
-         <!-- GRID DE CONTENIDO -->
-        <section id="galeria" class="py-12">
+        <!-- GRID DE ENTREGAS -->
+        <section id="entregas" class="py-12">
             <h2 class="text-3xl font-bold mb-10 text-center">Nuestras Entregas en Acción</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-2 rounded-xl"><img src="IMG_20260601_135048.jpg" class="rounded-lg w-full h-64 object-cover" alt="[Imagen de entrega 1]"></div>
-                <div class="glass-card p-2 rounded-xl"><img src="IMG_20260601_135049.jpg" class="rounded-lg w-full h-64 object-cover" alt="[Imagen de entrega 2]"></div>
-                <div class="glass-card p-2 rounded-xl"><img src="IMG_20260601_135111.jpg" class="rounded-lg w-full h-64 object-cover" alt="[Imagen de entrega 3]"></div>
+                <div class="glass-card p-2 rounded-xl"><img src="entrega-1.jpeg" class="rounded-lg w-full h-64 object-cover" alt="Fotografía de entrega de ayudas de la Fundación Raíz Viva 1"></div>
+                <div class="glass-card p-2 rounded-xl"><img src="entrega-2.jpeg" class="rounded-lg w-full h-64 object-cover" alt="Fotografía de entrega de ayudas de la Fundación Raíz Viva 2"></div>
+                <div class="glass-card p-2 rounded-xl"><img src="entrega-3.jpeg" class="rounded-lg w-full h-64 object-cover" alt="Fotografía de entrega de ayudas de la Fundación Raíz Viva 3"></div>
+                <div class="glass-card p-2 rounded-xl"><img src="entrega-4.jpeg" class="rounded-lg w-full h-64 object-cover" alt="Fotografía de entrega de ayudas de la Fundación Raíz Viva 4"></div>
+                <div class="glass-card p-2 rounded-xl"><img src="entrega-5.jpeg" class="rounded-lg w-full h-64 object-cover" alt="Fotografía de entrega de ayudas de la Fundación Raíz Viva 5"></div>
+                <div class="glass-card p-2 rounded-xl"><img src="entrega-6.jpeg" class="rounded-lg w-full h-64 object-cover" alt="Fotografía de entrega de ayudas de la Fundación Raíz Viva 6"></div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="py-20 text-center">
+            <div class="glass-card max-w-2xl mx-auto p-10 rounded-2xl">
+                <h2 class="text-3xl font-bold mb-4">¿Quieres unirte a la causa?</h2>
+                <p class="text-gray-300 mb-8">Toda ayuda cuenta. Contáctanos para donaciones o para formar parte de nuestro equipo de voluntarios.</p>
+                <!-- PLACEHOLDER: Reemplazar el href con el link de WhatsApp real o un mailto: seguro -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-brandGreen hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Escríbenos ahora
+                </a>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="text-center py-10 bg-dark text-gray-400 text-sm border-t border-white/5">
+    <footer class="text-center py-10 bg-brandGray-ultraDark text-gray-400 text-sm border-t border-white/5">
         <p>&copy; 2026 Fundación Raíz Viva. Higüey, Rep. Dom.</p>
     </footer>
 

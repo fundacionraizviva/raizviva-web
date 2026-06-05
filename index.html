@@ -26,74 +26,109 @@
 </head>
 <body class="bg-brandGray text-white relative min-h-screen pb-20 font-sans">
     
-    <!-- HEADER -->
-    <header class="p-6 flex justify-between items-center bg-brandDark shadow-md border-b-2 border-brandGreen sticky top-0 z-40">
-        <img src="logo.png" alt="Logotipo Fundación Raíz Viva" class="h-16 w-auto bg-white p-1 rounded-lg">
+    <!-- HEADER EXACTO AL DISEÑO ORIGINAL -->
+    <header class="p-4 flex items-center justify-between bg-brandDark shadow-md border-b border-white/5 sticky top-0 z-40">
+        <div class="flex items-center gap-4">
+            <!-- Contenedor blanco para el logo -->
+            <div class="bg-white rounded-xl p-1.5 shadow-sm">
+                <img src="logo.png" alt="Logotipo Fundación Raíz Viva" class="h-12 w-auto">
+            </div>
+            <!-- Título tipográfico -->
+            <div class="hidden sm:flex flex-col justify-center leading-none">
+                <span class="font-bold text-lg text-white">Fundación <span class="text-brandBlue">Raíz</span></span>
+                <span class="font-bold text-lg text-brandBlue">Viva</span>
+            </div>
+        </div>
         
-        <!-- Botón de WhatsApp Seguro -->
-        <a href="https://wa.me/PLACEHOLDER_NUMERO_AQUI" target="_blank" rel="noopener noreferrer" class="bg-brandGreen hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition-colors shadow-lg flex items-center gap-2">
-            <i data-lucide="phone"></i> Contáctanos
-        </a>
+        <nav class="hidden md:flex gap-8 text-sm font-bold text-gray-300">
+            <a href="#inicio" class="hover:text-brandBlue transition-colors">Inicio</a>
+            <a href="#mision" class="hover:text-brandBlue transition-colors">Nuestra Misión</a>
+        </nav>
     </header>
     
     <!-- MAIN CONTENT -->
     <main class="max-w-7xl mx-auto p-8">
         
-        <!-- GALERÍA DE ENTREGAS -->
+        <div class="text-center mb-12 mt-6">
+            <h1 class="text-3xl font-bold text-white mb-2">Envía tus propuestas y chatea con nuestro asistente</h1>
+            <p class="text-xl italic text-brandBlue font-medium">"Dar es mejor que recibir"</p>
+        </div>
+
+        <!-- FORMULARIO DE ALIANZAS (Basado en la captura) -->
+        <section class="bg-brandDark p-8 rounded-2xl border border-white/10 shadow-2xl max-w-4xl mx-auto mb-16">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Select: Tipo de entidad -->
+                <div class="flex flex-col">
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">SOY UNA / UN:</label>
+                    <select class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue appearance-none">
+                        <option>Fundación / Institución Aliada</option>
+                        <option>Empresa Privada</option>
+                        <option>Voluntario Independiente</option>
+                    </select>
+                </div>
+                
+                <!-- Input: Nombre -->
+                <div class="flex flex-col">
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">NOMBRE / ORGANIZACIÓN:</label>
+                    <input type="text" placeholder="Ej. Fundación de Apoyo" class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400">
+                </div>
+                
+                <!-- Input: Teléfono -->
+                <div class="flex flex-col">
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">TELÉFONO DE CONTACTO:</label>
+                    <input type="tel" placeholder="Ej. 829-555-5555" class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400">
+                </div>
+                
+                <!-- Input: Dirección -->
+                <div class="flex flex-col">
+                    <label class="text-xs font-bold text-gray-300 mb-2 tracking-wider">DIRECCIÓN / PROVINCIA:</label>
+                    <input type="text" placeholder="Ej. Higüey, Prov. La Altagracia" class="bg-brandGray border border-gray-500 rounded-lg p-3 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400">
+                </div>
+                
+                <!-- Textarea con Botón de IA -->
+                <div class="flex flex-col md:col-span-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-xs font-bold text-gray-300 tracking-wider">DETALLES DE LA AYUDA O ALIANZA REQUERIDA:</label>
+                        <button type="button" class="text-xs text-brandPink hover:text-pink-400 font-bold flex items-center gap-1 transition-colors">
+                            <i data-lucide="sparkles" class="w-3 h-3"></i> Optimizar Redacción con IA
+                        </button>
+                    </div>
+                    <textarea rows="4" placeholder="Escribe aquí tu borrador. Luego, pulsa 'Optimizar con IA' para que nuestro modelo de lenguaje lo redacte de forma profesional y persuasiva..." class="bg-brandGray border border-gray-500 rounded-lg p-4 text-white focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue placeholder-gray-400"></textarea>
+                </div>
+                
+                <!-- Footer del formulario y Botón Submit -->
+                <div class="md:col-span-2 flex flex-col sm:flex-row justify-between items-center mt-4 gap-4">
+                    <span class="text-xs text-gray-400">Datos procesados de manera segura y confidencial.</span>
+                    <button type="button" class="bg-brandBlue hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-lg w-full sm:w-auto">
+                        Enviar Solicitud
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- GALERÍA DE ENTREGAS (Minimalista) -->
         <section class="mb-16">
-            <h1 class="text-4xl font-bold text-center mb-2 text-white">Nuestras Entregas en Higüey</h1>
-            <!-- Frase Integrada -->
-            <p class="text-center text-xl italic text-brandPink mb-10 font-medium">"Dar es mejor que recibir"</p>
-            
+            <h2 class="text-2xl font-bold text-center mb-8 text-white">Nuestras Entregas en Acción</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden border-b-4 border-brandBlue shadow-lg transition-transform hover:scale-105">
+                <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden shadow-lg transition-transform hover:scale-105">
                     <img src="entrega-1.jpeg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega de ayudas 1">
                 </div>
-                <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden border-b-4 border-brandBlue shadow-lg transition-transform hover:scale-105">
+                <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden shadow-lg transition-transform hover:scale-105">
                     <img src="entrega-2.jpeg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega de ayudas 2">
                 </div>
-                <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden border-b-4 border-brandBlue shadow-lg transition-transform hover:scale-105">
+                <div class="bg-brandDark p-2 rounded-xl h-64 overflow-hidden shadow-lg transition-transform hover:scale-105">
                     <img src="entrega-3.jpeg" class="w-full h-full object-cover rounded-lg" alt="Fotografía de entrega de ayudas 3">
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: CÓMO AYUDAR -->
-        <section id="como-ayudar" class="bg-brandDark p-10 rounded-2xl border-t-4 border-brandPink shadow-xl mt-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-4xl font-extrabold text-brandPink mb-6">¿Cómo puedes ayudar?</h2>
-                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-                    Nuestras raíces se fortalecen con tu apoyo. Existen múltiples formas de unirte a nuestra misión en Higüey y generar un impacto directo en quienes más lo necesitan.
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-brandGray p-6 rounded-xl border border-white/10 text-left">
-                        <div class="w-12 h-12 bg-brandBlue rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="heart-handshake" class="text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-brandBlue">Aportes y Donaciones</h3>
-                        <p class="text-sm text-gray-300 mb-4">Contribuye con recursos para nuestras próximas entregas. Toda ayuda financiera o en especie cuenta.</p>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-brandBlue hover:text-white font-semibold transition-colors">Hacer un aporte &rarr;</a>
-                    </div>
-                    
-                    <div class="bg-brandGray p-6 rounded-xl border border-white/10 text-left">
-                        <div class="w-12 h-12 bg-brandGreen rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="users" class="text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-brandGreen">Únete al Voluntariado</h3>
-                        <p class="text-sm text-gray-300 mb-4">Sé parte de nuestro equipo en el terreno. Tu tiempo y tus manos son invaluables para nuestra causa.</p>
-                        <a href="https://wa.me/PLACEHOLDER_NUMERO_AQUI" target="_blank" rel="noopener noreferrer" class="text-brandGreen hover:text-white font-semibold transition-colors">Inscribirme ahora &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- CHAT INTELIGENTE (Flotante) -->
+    <!-- CHAT INTELIGENTE (Ajustado a Azul) -->
     <div id="smart-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         
-        <!-- Ventana del Chat -->
-        <div id="chat-window" class="hidden w-80 h-96 bg-brandDark border-2 border-brandBlue rounded-2xl shadow-2xl mb-4 flex flex-col overflow-hidden transition-all">
+        <div id="chat-window" class="hidden w-80 h-96 bg-brandDark border border-gray-600 rounded-2xl shadow-2xl mb-4 flex flex-col overflow-hidden transition-all">
             <div class="bg-brandBlue p-4 flex justify-between items-center">
                 <div class="flex items-center gap-2">
                     <i data-lucide="bot" class="text-white"></i>
@@ -104,39 +139,33 @@
                 </button>
             </div>
             
-            <!-- Contenedor de Mensajes -->
             <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-brandGray text-sm text-gray-200 flex flex-col gap-3">
                 <div class="text-left">
                     <div class="bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow">
-                        ¡Hola! Soy el asistente de la Fundación Raíz Viva. ¿En qué te puedo ayudar hoy? Puedes preguntarme sobre donaciones, voluntariado o sobre Virginia.
+                        ¡Hola! Soy el asistente de la Fundación Raíz Viva. ¿En qué te puedo ayudar hoy? Puedes preguntarme sobre donaciones, alianzas o nuestra historia.
                     </div>
                 </div>
             </div>
             
-            <!-- Input del Chat -->
             <div class="p-3 bg-brandDark border-t border-white/10">
-                <input type="text" id="chat-input" onkeypress="handleChatInput(event)" placeholder="Escribe tu mensaje y presiona Enter..." class="w-full bg-brandGray text-white rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brandBlue border border-white/10 placeholder-gray-400">
+                <input type="text" id="chat-input" onkeypress="handleChatInput(event)" placeholder="Escribe tu mensaje..." class="w-full bg-brandGray text-white rounded-full px-4 py-2 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue border border-gray-500 placeholder-gray-400">
             </div>
         </div>
 
-        <!-- Botón Flotante (Toggle) -->
         <button onclick="toggleChat()" class="w-14 h-14 bg-brandBlue hover:bg-blue-600 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110">
             <i data-lucide="message-square" class="text-white w-6 h-6"></i>
         </button>
     </div>
 
-    <!-- SCRIPTS LÓGICOS (Fase 2) -->
+    <!-- LÓGICA DEL CHAT -->
     <script>
-        // Inicializar iconos de Lucide
         lucide.createIcons();
 
-        // Control visual de la ventana de chat
         function toggleChat() {
             const chatWindow = document.getElementById('chat-window');
             chatWindow.classList.toggle('hidden');
         }
 
-        // Lógica del Asistente Virtual con Sanitización (Prevención XSS)
         function handleChatInput(event) {
             if (event.key === 'Enter') {
                 const inputField = document.getElementById('chat-input');
@@ -144,11 +173,9 @@
                 
                 if (!rawText) return;
 
-                // Mostrar mensaje del usuario de forma segura
                 appendMessage('user', rawText);
                 inputField.value = '';
 
-                // Simular el tiempo de respuesta del bot
                 setTimeout(() => {
                     procesarRespuestaBot(rawText);
                 }, 600);
@@ -158,19 +185,17 @@
         function procesarRespuestaBot(userText) {
             const textoLimpio = userText.toLowerCase();
             
-            // Regla de negocio: Biografía de Virginia
-            if (textoLimpio.includes('virginia')) {
-                appendMessage('bot', "Virginia destaca por su liderazgo en la iniciativa 'Mujeres de Impacto que Transforman', cuya gestión y visión estratégica derivaron en la creación de una fundación dedicada al apoyo de sectores vulnerables. Esta experiencia consolida su capacidad para movilizar equipos, gestionar proyectos de alto impacto social y canalizar soluciones efectivas para quienes más lo necesitan.");
+            if (textoLimpio.includes('fundadora') || textoLimpio.includes('liderazgo') || textoLimpio.includes('historia')) {
+                appendMessage('bot', "Nuestra fundadora destaca por su liderazgo en la iniciativa 'Mujeres de Impacto que Transforman', cuya gestión y visión estratégica derivaron en la creación de una fundación dedicada al apoyo de sectores vulnerables. Esta experiencia consolida su capacidad para movilizar equipos, gestionar proyectos de alto impacto social y canalizar soluciones efectivas para quienes más lo necesitan.");
             } 
-            else if (textoLimpio.includes('ayudar') || textoLimpio.includes('donar')) {
-                appendMessage('bot', "Toda ayuda es bienvenida. Puedes hacer un aporte económico o unirte a nuestro voluntariado. Revisa la sección '¿Cómo puedes ayudar?' en nuestra página para más detalles.");
+            else if (textoLimpio.includes('ayudar') || textoLimpio.includes('donar') || textoLimpio.includes('alianza')) {
+                appendMessage('bot', "Toda ayuda es bienvenida. Puedes enviarnos tu propuesta directamente a través del formulario de alianzas en esta misma página.");
             }
             else {
-                appendMessage('bot', "Gracias por comunicarte con nosotros. Si tienes una consulta específica, te invitamos a contactarnos a través de nuestro botón de WhatsApp en la parte superior.");
+                appendMessage('bot', "Gracias por comunicarte con nosotros. Si tienes una consulta específica, utiliza nuestro formulario principal y te contactaremos a la brevedad.");
             }
         }
 
-        // Función para renderizar los mensajes en el DOM de forma segura
         function appendMessage(sender, text) {
             const chatMessages = document.getElementById('chat-messages');
             const messageWrapper = document.createElement('div');
@@ -178,18 +203,15 @@
 
             if (sender === 'user') {
                 messageWrapper.className = "text-right";
-                messageBubble.className = "bg-brandBlue p-3 rounded-lg rounded-tr-none inline-block border border-white/5 shadow text-white";
+                messageBubble.className = "bg-brandBlue p-3 rounded-lg rounded-tr-none inline-block shadow text-white";
             } else {
                 messageWrapper.className = "text-left";
                 messageBubble.className = "bg-brandDark p-3 rounded-lg rounded-tl-none inline-block border border-white/5 shadow";
             }
 
-            // Uso de textContent para prevenir ejecución de scripts (Sanitización)
-            messageBubble.textContent = text;
+            messageBubble.textContent = text; // Prevención XSS activa
             messageWrapper.appendChild(messageBubble);
             chatMessages.appendChild(messageWrapper);
-
-            // Auto-scroll hacia el último mensaje
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
     </script>

@@ -52,24 +52,29 @@
 </head>
 <body class="bg-brandGray text-white relative min-h-screen pb-20 font-sans">
     
-    <!-- HEADER EXACTO AL DISEÑO ORIGINAL -->
-    <header class="p-4 flex items-center justify-between bg-brandDark shadow-md border-b border-white/5 sticky top-0 z-40">
-        <div class="flex items-center gap-4">
-            <!-- Contenedor blanco para el logo -->
-            <div class="bg-white rounded-xl p-1.5 shadow-sm">
-                <img src="logo.jpg" alt="Logotipo Fundación Raíz Viva" class="h-12 w-auto" onerror="this.src='https://placehold.co/150x50/ffffff/128230?text=Raiz+Viva'">
+    <!-- HEADER CORREGIDO PARA EVITAR CORTES -->
+    <header class="p-4 bg-brandDark shadow-md border-b border-white/5 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+            
+            <!-- Grupo Logo y Título -->
+            <div class="flex items-center gap-4">
+                <!-- Contenedor blanco para el logo -->
+                <div class="bg-white rounded-xl p-1.5 shadow-sm shrink-0">
+                    <img src="logo.jpg" alt="Logotipo Fundación Raíz Viva" class="h-12 w-auto" onerror="this.src='https://placehold.co/150x50/ffffff/128230?text=Raiz+Viva'">
+                </div>
+                <!-- Título tipográfico -->
+                <div class="flex flex-col justify-center leading-none">
+                    <span class="font-bold text-lg text-white">Fundación <span class="text-brandBlue">Raíz</span></span>
+                    <span class="font-bold text-lg text-brandBlue">Viva</span>
+                </div>
             </div>
-            <!-- Título tipográfico -->
-            <div class="hidden sm:flex flex-col justify-center leading-none">
-                <span class="font-bold text-lg text-white">Fundación <span class="text-brandBlue">Raíz</span></span>
-                <span class="font-bold text-lg text-brandBlue">Viva</span>
-            </div>
+            
+            <!-- Navegación -->
+            <nav class="hidden md:flex gap-8 text-sm font-bold text-gray-300 ml-auto">
+                <a href="#inicio" class="hover:text-brandBlue transition-colors whitespace-nowrap">Inicio</a>
+                <a href="#mision" class="hover:text-brandBlue transition-colors whitespace-nowrap">Nuestra Misión</a>
+            </nav>
         </div>
-        
-        <nav class="hidden md:flex gap-8 text-sm font-bold text-gray-300">
-            <a href="#inicio" class="hover:text-brandBlue transition-colors">Inicio</a>
-            <a href="#mision" class="hover:text-brandBlue transition-colors">Nuestra Misión</a>
-        </nav>
     </header>
     
     <!-- MAIN CONTENT -->
@@ -134,7 +139,7 @@
             </form>
         </section>
 
-        <!-- BOTÓN FLOTANTE DE WHATSAPP (NUEVO) -->
+        <!-- BOTÓN FLOTANTE DE WHATSAPP -->
         <a href="https://wa.me/18297286216?text=Hola!%20Me%20interesa%20contactar%20con%20la%20Fundaci%C3%B3n%20Ra%C3%ADz%20Viva." 
            target="_blank" 
            rel="noopener noreferrer" 
@@ -163,7 +168,7 @@
 
     </main>
 
-    <!-- CHAT INTELIGENTE (Diseño Original) -->
+    <!-- CHAT INTELIGENTE -->
     <div id="smart-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         
         <div id="chat-window" class="hidden w-[90vw] max-w-sm h-[450px] bg-brandDark border border-gray-600 rounded-2xl shadow-2xl mb-4 flex flex-col overflow-hidden transition-all fade-in">
